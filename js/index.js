@@ -1,1 +1,1 @@
-alert("Ola mundo 2025")
+document.getElementById("text").innerHTML="Primeiro texto <b> JS </b>!";
