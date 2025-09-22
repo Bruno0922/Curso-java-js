@@ -81,7 +81,7 @@ Categorias principais:
 4. Comparação (comparar valores) → ==, ===, !=, <, >, <=, >=
 5. Condicional (ternário) → condição ? valor1 : valor2
 6. Lógicos → &&, ||, !
-*/
+
 
 // ==========================
 // Operadores Aritméticos
@@ -188,3 +188,48 @@ console.log("!  :", !(idade === 65)); // false
 // 1. Validações múltiplas
 // 2. Regras de acesso
 // 3. Negação de condições
+*/
+
+/*FUNÇÕES
+uma função JavaScript é um bloco de codigo projetado para executar uma
+tarefa especifica
+
+é como uma pequena "Fabrica" onde você fa uma entrada e ele te dá uma saída.
+
+pode ser encarado como "mini-programas" projetados para fazer uma tarefa que vai contruibuir para todo codigo.
+
+Uma função JavasScript é executada quando "Algo" a invoca (chama - a)
+*/
+
+//Criação de uma função
+
+//SOMA
+function soma(valor1, valor2){
+    return valor1 + valor2;
+}
+document.getElementById("text").innerHTML = soma(10,10); // return esse valor no HTML
+
+//Cotação do dolar
+function realcontacao(real,cotacao){
+    return real * cotacao;
+}
+
+var total = realcontacao(10,5.08);
+alert (total);
+
+
+//Botão animado com junção no HTML
+function alertaHello(){
+    alert("Ola Pessoal");
+}
+
+//Para Celsius
+function paracelsius(valorfahrenheit){
+    return (5/9) * (valorfahrenheit - 32);
+
+}
+
+var x =paracelsius(77);
+
+alert("A temperatura é de " + x + " graus celsius");
+
