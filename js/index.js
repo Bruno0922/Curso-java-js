@@ -190,46 +190,52 @@ console.log("!  :", !(idade === 65)); // false
 // 3. Negação de condições
 */
 
-/*FUNÇÕES
-uma função JavaScript é um bloco de codigo projetado para executar uma
-tarefa especifica
+/*
+📌 FUNÇÕES EM JAVASCRIPT
+Uma função é um bloco de código projetado para executar uma tarefa específica.
+Pode ser vista como uma "pequena fábrica": você fornece uma entrada (parâmetros)
+e recebe uma saída (retorno).
 
-é como uma pequena "Fabrica" onde você fa uma entrada e ele te dá uma saída.
-
-pode ser encarado como "mini-programas" projetados para fazer uma tarefa que vai contruibuir para todo codigo.
-
-Uma função JavasScript é executada quando "Algo" a invoca (chama - a)
+Uma função só é executada quando é invocada (chamada).
 */
 
-//Criação de uma função
-
-//SOMA
-function soma(valor1, valor2){
-    return valor1 + valor2;
-}
-document.getElementById("text").innerHTML = soma(10,10); // return esse valor no HTML
-
-//Cotação do dolar
-function realcontacao(real,cotacao){
-    return real * cotacao;
+// ==========================
+// Exemplo 1: Função de Soma
+// ==========================
+function soma(a, b) {
+  return a + b;
 }
 
-var total = realcontacao(10,5.08);
-alert (total);
+document.getElementById("text").innerHTML = `Resultado da soma: ${soma(10, 10)}`;
 
 
-//Botão animado com junção no HTML
-function alertaHello(){
-    alert("Ola Pessoal");
+// ==========================
+// Exemplo 2: Conversão de Real para Dólar
+// ==========================
+function realParaDolar(real, cotacao) {
+  return real * cotacao;
 }
 
-//Para Celsius
-function paracelsius(valorfahrenheit){
-    return (5/9) * (valorfahrenheit - 32);
+const total = realParaDolar(10, 5.08);
+console.log(`Conversão de R$10,00 → $${total.toFixed(2)}`);
 
+
+// ==========================
+// Exemplo 3: Função em Evento de Botão
+// ==========================
+function alertaHello() {
+  alert("Olá, pessoal!");
+}
+// Essa função pode ser chamada diretamente no HTML:
+// <button onclick="alertaHello()">Clique aqui</button>
+
+
+// ==========================
+// Exemplo 4: Conversão Fahrenheit → Celsius
+// ==========================
+function paraCelsius(fahrenheit) {
+  return (5 / 9) * (fahrenheit - 32);
 }
 
-var x =paracelsius(77);
-
-alert("A temperatura é de " + x + " graus celsius");
-
+const temperatura = paraCelsius(77);
+console.log(`A temperatura é ${temperatura.toFixed(1)}°C`);
