@@ -239,3 +239,31 @@ function paraCelsius(fahrenheit) {
 
 const temperatura = paraCelsius(77);
 console.log(`A temperatura é ${temperatura.toFixed(1)}°C`);
+
+
+/* OBJETOS
+Objeto são basicamente variaveis com muitos valores
+Ex:const carro = {marca: "ford", modelo: "ka", ano: 2015}
+
+os valores dentro de um objeto são chamados de propriedades
+
+Objetos tambem podem ter metados> Um metado é uma função colocadas dentro de uma propriedade.
+*/
+
+const carro = { // Objeto Sempre usar o const pois ele vai sempre ser valores fixos
+    marca: "ford", //Propriedadas
+    modelo: "ka", //Propriedadas
+    ano: 2015, //Propriedadas
+    placa: "ABC-1234", //Propriedadas
+    buzina: function() {alert('Biii')}, //Metado com uma função chamada buzina
+    completo: function (){
+        return "A marca é " + this.marca + " e o modelo é: "+ this.modelo //this signifca"E"
+    } // Para adicionar o mais alguma propriedade usa this.propriedade
+};
+
+console.log(carro.completo());
+
+//console.log(carro) Mostrar todos os dados do carro
+//console.log(carro.modelo) //Se quiser monstrar uma propriedade especifica
+
+//carro.buzina(0); //Para chama função buzina
