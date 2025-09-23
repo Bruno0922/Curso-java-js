@@ -1,22 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apredendo JS</title>
-    <style>
-        body{
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprendendo JS - Eventos</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #teste {
+      margin: auto;
+      width: 80%;
+      height: 200px;
+      background: blue;
+      transition: background 0.3s ease; /* Deixa a troca de cor suave */
+    }
+
+    #Texto {
+      padding: 20px;
+      font-size: 18px;
+      width: 60%;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <h1>Aprendendo Javasrcript</h1>
-    <p id="text"></p>
-    <button onclick="alertaHello()">Clique Aqui</button>
-    <p>
-        <script> document.write(5 + 5)</script>
-    </p>
-    <script src="js/index.js"></script>
+  <h1>Aprendendo JavaScript - Eventos</h1>
+  <p id="text"></p>
+
+  <!-- Botões -->
+  <button onclick="eventoClick()">Clique Aqui</button>
+  <button ondblclick="eventoDblClick()">Clique Duplo</button>
+  <br><br>
+
+  <!-- Select -->
+  <select onchange="mudou()" id="itens">
+    <option value="1">Valor 1</option>
+    <option value="2">Valor 2</option>
+    <option value="3">Valor 3</option>
+    <option value="4">Valor 4</option>
+  </select>
+
+  <br><br>
+
+  <!-- Div interativa -->
+  <div id="teste" onmouseover="viraVermelho()" onmouseout="viraAzul()"></div>
+
+  <br>
+
+  <!-- Input -->
+  <input 
+    id="Texto" 
+    type="text" 
+    placeholder="Digite algum texto" 
+    value="Já vem com texto"
+    onkeypress="teclaPressionada()" 
+    onblur="eventoBlur()" 
+    onfocus="limpaTexto()" 
+  />
+
+  <!-- Teste de document.write -->
+  <p>
+    <script>document.write(5 + 5)</script>
+  </p>
+
+  <script src="js/index.js"></script>
 </body>
 </html>

@@ -242,28 +242,98 @@ console.log(`A temperatura é ${temperatura.toFixed(1)}°C`);
 
 
 /* OBJETOS
-Objeto são basicamente variaveis com muitos valores
-Ex:const carro = {marca: "ford", modelo: "ka", ano: 2015}
-
-os valores dentro de um objeto são chamados de propriedades
-
-Objetos tambem podem ter metados> Um metado é uma função colocadas dentro de uma propriedade.
+   Objetos em JavaScript são coleções de pares chave-valor, ou seja,
+   variáveis que armazenam múltiplos valores organizados em propriedades.
+   Além de propriedades, objetos também podem conter métodos
+   (funções dentro de um objeto).
 */
 
-const carro = { // Objeto Sempre usar o const pois ele vai sempre ser valores fixos
-    marca: "ford", //Propriedadas
-    modelo: "ka", //Propriedadas
-    ano: 2015, //Propriedadas
-    placa: "ABC-1234", //Propriedadas
-    buzina: function() {alert('Biii')}, //Metado com uma função chamada buzina
-    completo: function (){
-        return "A marca é " + this.marca + " e o modelo é: "+ this.modelo //this signifca"E"
-    } // Para adicionar o mais alguma propriedade usa this.propriedade
+// Criando um objeto "carro"
+const carro = { 
+    // Propriedades
+    marca: "Ford",
+    modelo: "Ka",
+    ano: 2015,
+    placa: "ABC-1234",
+
+    // Método: função associada ao objeto
+    buzina: function () {
+        alert("Biii 🚗");
+    },
+
+    // Método que retorna informações completas
+    completo: function () {
+        // `this` faz referência ao próprio objeto
+        return `A marca é ${this.marca} e o modelo é ${this.modelo}`;
+    }
 };
 
-console.log(carro.completo());
+// Exemplos de uso:
+console.log(carro.completo());  // Mostra marca e modelo
+// console.log(carro);          // Mostra todas as propriedades
+// console.log(carro.modelo);   // Mostra apenas o modelo
+// carro.buzina();              // Executa o método buzina
 
-//console.log(carro) Mostrar todos os dados do carro
-//console.log(carro.modelo) //Se quiser monstrar uma propriedade especifica
+/* EVENTOS EM JAVASCRIPT
+Eventos são ações disparadas pela interação do usuário com a página.
+É o correto manejo desses eventos que tornam as páginas interativas e dinâmicas.
 
-//carro.buzina(0); //Para chama função buzina
+Principais eventos:
+- onclick        → disparado ao clicar
+- ondblclick     → clique duplo
+- onmouseover    → mouse sobre o elemento
+- onmouseout     → mouse sai do elemento
+- onmousedown    → botão do mouse pressionado
+- onmouseup      → botão do mouse solto
+- onfocus        → elemento recebe foco (ex: input)
+- onchange       → alteração de conteúdo (ex: select)
+- onblur         → elemento perde foco
+- onkeydown      → tecla pressionada
+- onkeypress     → tecla pressionada e solta
+- onkeyup        → tecla solta
+- onload         → página carregada
+- onresize       → janela redimensionada
+*/
+
+// Clique simples: muda cor do fundo
+function eventoClick() {
+  document.body.style.backgroundColor = "red";
+}
+
+// Clique duplo: alerta
+function eventoDblClick() {
+  alert("Evento de clique duplo");
+}
+
+// Mouse sobre a div
+function viraVermelho() {
+  let div = document.getElementById("teste");
+  div.style.backgroundColor = "red";
+}
+
+// Mouse sai da div
+function viraAzul() {
+  let div = document.getElementById("teste");
+  div.style.backgroundColor = "blue";
+}
+
+// Campo select alterado
+function mudou() {
+  console.log("O select foi alterado");
+}
+
+// Quando o input recebe foco
+function limpaTexto() {
+  document.getElementById("Texto").value = "";
+}
+
+// Quando o input perde o foco
+function eventoBlur() {
+  console.log("O campo perdeu o foco");
+}
+
+// Tecla pressionada dentro do input
+function teclaPressionada() {
+  let input = document.getElementById("Texto").value;
+  console.log("Digitando: " + input);
+}
