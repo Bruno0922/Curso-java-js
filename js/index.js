@@ -550,6 +550,42 @@ function verificarcor (){
     
 }
 
+/* Laço de repetição for
+/* ==========================
+   Laços de Repetição (FOR)
+   ========================== 
+   Os laços oferecem um jeito fácil e rápido de executar
+   uma ação repetidas vezes.
+*/
 
+// --------------------------
+// Exemplo 1: Contando de 0 até 10.000
+// --------------------------
+// Início: i = 0
+// Condição: repetir enquanto i < 10001
+// Incremento: i++ (aumenta 1 a cada volta)
+/*
+for (let i = 0; i < 10001; i++) {
+    document.getElementById("teste05").innerHTML += i + " , ";
+}
+*/
 
+// --------------------------
+// Exemplo 2: Lista de anos (1900 até o ano atual)
+// --------------------------
+var ano = new Date().getFullYear(); // Pega o ano atual do sistema
 
+for (let i = ano; i >= 1900; i--) {
+    document.getElementById("ano").innerHTML += 
+        "<option value='" + i + "'>" + i + "</option>";
+}
+
+// --------------------------
+// Exemplo 3: Lista de carros
+// --------------------------
+const carros = ["GOL", "FUSCA", "BRASILIA", "DEL REY", "CHEVETTE"];
+var tamanho = carros.length; // Quantidade de itens no array
+
+for (let i = 0; i < tamanho; i++) {
+    document.getElementById("teste06").innerHTML += carros[i] + " - ";
+}
