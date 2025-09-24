@@ -373,21 +373,21 @@ alert(lista[0]); // Mostra apenas o primeiro item → "Café"
 // ----------------------------
 // 🔹 Trabalhando com arrays
 // ----------------------------
-const pessoa = ["Bruno", "Conceição", 20];
+const Pessoa = ["Bruno", "Conceição", 20];
 
-console.log(pessoa.length);         // Conta os itens do array → 3
-console.log(pessoa[pessoa.length-1]); // Mostra o último item → 20
+console.log(Pessoa.length);         // Conta os itens do array → 3
+console.log(Pessoa[Pessoa.length-1]); // Mostra o último item → 20
 
 
 
-console.log(Array.isArray(pessoa)); // Verifica se é um array → true
+console.log(Array.isArray(Pessoa)); // Verifica se é um array → true
 
 // ----------------------------
 // 🔹 Diferença entre Array e Objeto
 // ----------------------------
 
 // Array (acesso por índice)
-console.log(pessoa[0]); // Bruno
+console.log(Pessoa[0]); // Bruno
 
 // Objeto (acesso por chave)
 const pessoaObj = {nome:"Bruno", sobrenome:"Conceição", idade:20};
@@ -474,4 +474,52 @@ const maior20 = numeros.filter(function(value){
     return value > 20;
 });
 console.log(maior20); // Números maiores que 20
+
+
+
+
+/* ==========================
+   IF e ELSE - Exemplos
+   ========================== */
+
+// Exemplo 1: Interruptor
+var interruptor = "off";
+
+if (interruptor == "on") {
+    alert("A lâmpada está ligada");
+} else {
+    alert("A lâmpada está desligada");
+}
+
+// --------------------------
+
+// Exemplo 2: Saudação pelo horário
+var hora = new Date().getHours(); // pega a hora atual
+
+if (hora < 12) {
+    alert("Bom dia");
+} else if (hora < 18) {
+    alert("Boa tarde");
+} else {
+    alert("Boa noite");
+}
+
+// --------------------------
+
+// Exemplo 3: Verificação de campo input
+function verificar() {
+    let nome = document.getElementById("nome").value;
+
+    if (nome == "" || nome == null) {
+        let p = document.getElementById("teste03");
+        p.innerHTML = "O campo está vazio, preencha por favor!";
+        p.style.color = "red";
+    } else {
+        alert("O nome foi enviado com sucesso!");
+    }
+}
+
+
+
+
 
