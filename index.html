@@ -15,7 +15,7 @@
       width: 80%;
       height: 200px;
       background: blue;
-      transition: background 0.3s ease; /* Deixa a troca de cor suave */
+      transition: background 0.3s ease; /* Transição suave */
     }
 
     #Texto {
@@ -48,12 +48,10 @@
     <option value="3">Valor 3</option>
     <option value="4">Valor 4</option>
   </select>
-
   <br><br>
 
   <!-- Div interativa -->
   <div id="teste" onmouseover="viraVermelho()" onmouseout="viraAzul()"></div>
-
   <br>
 
   <!-- Input -->
@@ -68,26 +66,36 @@
   />
 
   <!-- Teste de document.write -->
-  <p>
-    <script>document.write(5 + 5)</script>
-  </p>
- <p id="Teste02"></p>
- <p id="teste03"></p>
- 
- <input type="text" id="nome" placeholder="Digite uma nome">
-<button onclick="verificar()">Verificar</button>
- 
+  <p><script>document.write(5 + 5)</script></p>
 
- <p id="teste04"></p>
- <input type="text" id="cor" placeholder="Digite uma cor">
- <button onclick="verificarcor()">Verificar</button>
+  <p id="Teste02"></p>
+  <p id="teste03"></p>
 
- <p id="teste05"></p>
- <select id="ano">
+  <!-- Verificação de nome -->
+  <input type="text" id="nome" placeholder="Digite um nome">
+  <button onclick="verificar()">Verificar</button>
+
+  <p id="teste04"></p>
+
+  <!-- Verificação de cor -->
+  <input type="text" id="cor" placeholder="Digite uma cor">
+  <button onclick="verificarcor()">Verificar</button>
+
+  <p id="teste05"></p>
+  <select id="ano">
     <option selected disabled>Selecione o ano</option>
- </select>
+  </select>
 
- <p id="teste06"></p>
+  <p id="teste06"></p>
+  <pre id="teste07"></pre>
+  <pre id="teste08"></pre>
+
+  <!-- CEP -->
+  <input id="cep" type="text" placeholder="Digite o seu CEP">
+  <button onclick="buscarCep()">Buscar</button>
+  <p id="text09"></p>
+
+  <!-- Script externo -->
   <script src="js/index.js"></script>
 </body>
 </html>

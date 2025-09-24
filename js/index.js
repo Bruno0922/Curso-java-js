@@ -634,78 +634,145 @@ console.log(gol.buzina());
  */
 
 
-//** Manipular datas em javascript */
+// ** Manipular datas em JavaScript **
 
-let data = new Date(); //sempre que se repefrir em data usamos o new date ()
+// Criando uma nova data (data atual)
+let data = new Date(); // Sempre que se referir a datas usamos new Date()
 
-//let ano = data.getFullYear(); //para pegar o ano atual
+// ------------------- ANO -------------------
+// let ano = data.getFullYear(); // Pega o ano atual
 
-let mes = data.getMonth(); //para pega um mes atual - de 0 ate 11 sendo 0 janeiro e 11 dezembro
-//Esse ele mostra o meses em forma de numeros
+// ------------------- MÊS -------------------
+let mes = data.getMonth(); // Pega o mês atual (0 = Janeiro, 11 = Dezembro)
+console.log(mes); // Mostra em número
 
+const mesesDoAno = [
+    "JANEIRO", "FEVEREIRO", "MARÇO", "ABRIL", "MAIO", "JUNHO",
+    "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO"
+];
 
-const mesesDoAno = ["JANEIRO", "FEVEREIRO0", "MARÇO", "ABRIL","MAIO", "JUNHO", "JULHO","AGOSTO","SETEMBRO","OUTUBRO","NOVEMBRO","DEZEMBRO"];
-let mescrito = mesesDoAno[data.getMonth()];
-console.log(mescrito)
-//Esse mostar o meses em forma de palavras como gente criou um objeto 
+let mesEscrito = mesesDoAno[data.getMonth()];
+console.log(mesEscrito); // Mostra o mês por extenso
 
+// ------------------- DIA -------------------
+let diaMes = data.getDate(); // Pega o dia do mês (1 a 31)
+console.log(diaMes);
 
-let diasMes = data.getDate();
-console.log(diasMes) //Pegar o dia do mes - 1 ate 31
+let diaSemana = data.getDay(); // Pega o dia da semana (0 = Domingo, 6 = Sábado)
+console.log(diaSemana);
 
-let diasSemana = data.getDay(); // Nessa forma ele vai mostrar dias da semana em numeros 
-console.log(diasSemana); // Domingo 0 e sabado 6
+const diasSemana = ["DOMINGO", "SEGUNDA", "TERÇA", "QUARTA", "QUINTA", "SEXTA", "SÁBADO"];
+let diaSemanaEscrito = diasSemana[data.getDay()];
+console.log(diaSemanaEscrito); // Mostra o dia da semana por extenso
 
-const Diasemana = ["DOMINGO", "SEGUNDA", "TERÇA", "QUARTA","QUINTA", "SEXTA", "SABADO"];
-let diaSemescrito = Diasemana[data.getDay()];
-console.log(diaSemescrito);
-//Esse mostar o meses em forma de palavras como gente criou um objeto 
+// ------------------- HORAS -------------------
+// let hora = data.getHours(); // Pega a hora (0 a 23)
+// console.log(hora);
 
+let minutos = data.getMinutes(); // Pega os minutos (0 a 59)
+console.log(minutos);
 
-//let hora = data.getHours();
-//console.log(hora); // Pegar a hora de 0 até 23
+let segundos = data.getSeconds(); // Pega os segundos (0 a 59)
+console.log(segundos);
 
-let minutos = data.getMinutes();
-console.log(minutos); // Pegar a minutos de 0 até 59
+let milissegundos = data.getMilliseconds(); // Pega os milissegundos (0 a 999)
+console.log(milissegundos);
 
-let segundo = data.getSeconds();
-console.log(segundo); // Pegar a segundo de 0 até 23
-
-let milesegundos = data.getMilliseconds();
-console.log(milesegundos); //Pegar milisegundos - de 0 até 999
-
-let dataBR = data.toLocaleString('pt-BR'); //PEGAR A DATA NO PADRAO BRASILEIRO - DIA / MES / ANO
+// ------------------- FORMATAÇÃO BR -------------------
+let dataBR = data.toLocaleString("pt-BR"); // Data no padrão brasileiro
 console.log(dataBR);
 
+// ------------------- FORMATAR COM ZERO -------------------
+let d = new Date();
+let diaAtual = d.getDate();
+let mesAtual = d.getMonth() + 1; // Sempre somar +1, pois começa em 0
+let anoAtual = d.getFullYear();
 
-
-d = new Date (); //Pegar os valores separados
-Diasmes = d.getDate();
-MEs = d.getMonth() + 1;
-ANo = d.getFullYear();
-
-function addZero (x) {return x < 10 ? '0' + x : '' + x;}; //Adicionar o zera na frente do dia e do mes caso precisar
-
-let dataPadraoBR = addZero(Diasmes) + "/" + addZero(MEs) + "/" + ANo; //Aqui vai mostara forma que vai aparece nosso resultado
-console.log(dataPadraoBR);
-
-
-var hoje = new Date(); //Comparar dats - maior ou menor. Ex: vencimentos
-var vencimeneto = new Date(2022,0,15); //Gente vai adicionar quando vai vencer
-
-if (hoje > vencimeneto){
-    console.log("Sua conta esta vencida");
-} else {
-    console.log("Sua conta ainda esta no prazo");
+function addZero(x) {
+    return x < 10 ? "0" + x : "" + x; // Adiciona zero na frente se menor que 10
 }
 
+let dataPadraoBR = addZero(diaAtual) + "/" + addZero(mesAtual) + "/" + anoAtual;
+console.log(dataPadraoBR);
 
-//Diferença entre duas datas em dias
-var datainicial = new Date(); //Data atual
-var datafinal = new Date(2025,11,31); //Data que gente quer comparar
+// ------------------- COMPARAR DATAS -------------------
+let hoje = new Date();
+let vencimento = new Date(2022, 0, 15); // Janeiro = 0
 
-var diferencatempo = datafinal.getTime() - datainicial.getTime(); //aqui genta vai subtarir o tempo em milesegundos
+if (hoje > vencimento) {
+    console.log("Sua conta está vencida");
+} else {
+    console.log("Sua conta ainda está no prazo");
+}
 
-var diferencadias = Math.ceil(diferencatempo / (24 * 60 * 60 * 1000)); // Aqui para converta milesegundo em dias
+// ------------------- DIFERENÇA ENTRE DUAS DATAS -------------------
+let dataInicial = new Date(); // Data atual
+let dataFinal = new Date(2025, 11, 31); // 31/12/2025
 
-console.log(diferencadias);
+let diferencaTempo = dataFinal.getTime() - dataInicial.getTime(); // Diferença em milissegundos
+let diferencaDias = Math.ceil(diferencaTempo / (24 * 60 * 60 * 1000)); // Convertendo para dias
+
+console.log("Faltam " + diferencaDias + " dias para 31/12/2025");
+
+ 
+/** JSON
+ * JSON significa Javascript Object Notation (Notação de Objetos em JavaScript).
+ * 
+ * De forma simples, JSON é uma maneira de converter objetos em texto
+ * e também de converter texto em objetos.
+ * 
+ * É usado principalmente para transmitir dados entre sistemas de forma simples,
+ * já que o formato de texto pode ser lido por praticamente qualquer linguagem de programação.
+ * 
+ * Métodos principais no JavaScript:
+ * - JSON.parse() -> Converte texto JSON em objetos
+ * - JSON.stringify() -> Converte objetos em texto JSON
+ */
+
+// ------------------- OBJETO PARA TEXTO -------------------
+const cCarro = { 
+    marca: "Fiat",
+    modelo: "Uno",
+    ano: 2001,
+    motor: ["1.6", "1.4", "1.0"] // Array dentro do objeto
+};
+
+// Converte objeto em texto JSON
+let textoJSON = JSON.stringify(cCarro); 
+
+// Mostra o JSON no HTML
+document.getElementById("teste07").innerHTML = textoJSON;
+
+// ------------------- TEXTO PARA OBJETO -------------------
+let obj = JSON.parse(textoJSON); // Converte de volta para objeto
+console.log(obj.modelo);         // Mostra a propriedade "modelo"
+console.log(obj.motor[2]);       // Mostra o item do array "motor"
+
+// ------------------- FUNÇÃO PARA BUSCAR CEP -------------------
+function buscarCep() {
+    let campoTexto = document.getElementById("cep").value; // Pega valor do input
+
+    const ajax = new XMLHttpRequest(); // Cria a requisição
+    ajax.open("GET", "https://viacep.com.br/ws/" + campoTexto + "/json/"); 
+    ajax.send(); // Envia a requisição
+
+    // Quando a resposta chegar
+    ajax.onload = function () {
+        document.getElementById("text09").innerHTML = this.responseText;
+    };
+}
+
+/* ------------------- EXEMPLO FIXO -------------------
+const ajax = new XMLHttpRequest();
+ajax.open("GET", "https://viacep.com.br/ws/01001000/json/");
+ajax.send();
+
+ajax.onload = function () {
+    document.getElementById("teste08").innerHTML = this.responseText;
+};
+------------------------------------------------------ */
+
+
+
+
+ 
