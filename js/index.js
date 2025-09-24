@@ -632,3 +632,80 @@ console.log(gol.buzina());
  * Dica: Classes sempre precisam ser declaradas 
  * antes da criação dos objetos.
  */
+
+
+//** Manipular datas em javascript */
+
+let data = new Date(); //sempre que se repefrir em data usamos o new date ()
+
+//let ano = data.getFullYear(); //para pegar o ano atual
+
+let mes = data.getMonth(); //para pega um mes atual - de 0 ate 11 sendo 0 janeiro e 11 dezembro
+//Esse ele mostra o meses em forma de numeros
+
+
+const mesesDoAno = ["JANEIRO", "FEVEREIRO0", "MARÇO", "ABRIL","MAIO", "JUNHO", "JULHO","AGOSTO","SETEMBRO","OUTUBRO","NOVEMBRO","DEZEMBRO"];
+let mescrito = mesesDoAno[data.getMonth()];
+console.log(mescrito)
+//Esse mostar o meses em forma de palavras como gente criou um objeto 
+
+
+let diasMes = data.getDate();
+console.log(diasMes) //Pegar o dia do mes - 1 ate 31
+
+let diasSemana = data.getDay(); // Nessa forma ele vai mostrar dias da semana em numeros 
+console.log(diasSemana); // Domingo 0 e sabado 6
+
+const Diasemana = ["DOMINGO", "SEGUNDA", "TERÇA", "QUARTA","QUINTA", "SEXTA", "SABADO"];
+let diaSemescrito = Diasemana[data.getDay()];
+console.log(diaSemescrito);
+//Esse mostar o meses em forma de palavras como gente criou um objeto 
+
+
+//let hora = data.getHours();
+//console.log(hora); // Pegar a hora de 0 até 23
+
+let minutos = data.getMinutes();
+console.log(minutos); // Pegar a minutos de 0 até 59
+
+let segundo = data.getSeconds();
+console.log(segundo); // Pegar a segundo de 0 até 23
+
+let milesegundos = data.getMilliseconds();
+console.log(milesegundos); //Pegar milisegundos - de 0 até 999
+
+let dataBR = data.toLocaleString('pt-BR'); //PEGAR A DATA NO PADRAO BRASILEIRO - DIA / MES / ANO
+console.log(dataBR);
+
+
+
+d = new Date (); //Pegar os valores separados
+Diasmes = d.getDate();
+MEs = d.getMonth() + 1;
+ANo = d.getFullYear();
+
+function addZero (x) {return x < 10 ? '0' + x : '' + x;}; //Adicionar o zera na frente do dia e do mes caso precisar
+
+let dataPadraoBR = addZero(Diasmes) + "/" + addZero(MEs) + "/" + ANo; //Aqui vai mostara forma que vai aparece nosso resultado
+console.log(dataPadraoBR);
+
+
+var hoje = new Date(); //Comparar dats - maior ou menor. Ex: vencimentos
+var vencimeneto = new Date(2022,0,15); //Gente vai adicionar quando vai vencer
+
+if (hoje > vencimeneto){
+    console.log("Sua conta esta vencida");
+} else {
+    console.log("Sua conta ainda esta no prazo");
+}
+
+
+//Diferença entre duas datas em dias
+var datainicial = new Date(); //Data atual
+var datafinal = new Date(2025,11,31); //Data que gente quer comparar
+
+var diferencatempo = datafinal.getTime() - datainicial.getTime(); //aqui genta vai subtarir o tempo em milesegundos
+
+var diferencadias = Math.ceil(diferencatempo / (24 * 60 * 60 * 1000)); // Aqui para converta milesegundo em dias
+
+console.log(diferencadias);
