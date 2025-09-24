@@ -520,6 +520,36 @@ function verificar() {
 }
 
 
+/* Switch 
+É usado para realizar diferntes ações com base em diferntes condições no mesmo bloco de verificação. caso a condição não seja compativel
+não sera executada e o vaor padrão será acionado.
+*/
+
+function verificarcor (){
+    let cor = document.getElementById("cor").value;
+
+    switch (cor){
+        case "azul":
+            //o que acontece
+            document.body.style.backgroundColor = "blue";
+            break;
+
+        case "vermelho":
+            // o que acontece
+            document.body.style.backgroundColor = "red";
+            break;
+
+        case "amarelo":
+            // o que acontece
+            document.body.style.backgroundColor = "yellow";
+            break;
+
+        default:
+            document.getElementById("teste04").innerHTML = "Cor deconhecida para:" + cor;
+    }
+    
+}
+
 
 
 
