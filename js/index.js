@@ -337,3 +337,59 @@ function teclaPressionada() {
   let input = document.getElementById("Texto").value;
   console.log("Digitando: " + input);
 }
+
+
+/* ARRAYS
+Os arrays em JavaScript são usados para armazenar vários valores em uma única variável.
+Diferente dos objetos, que funcionam com propriedades (chave/valor),
+os arrays funcionam por **posição** (índices numéricos começando do 0).
+*/
+
+// ----------------------------
+// 🔹 Criando Arrays
+// ----------------------------
+
+// Forma 1: Mais usada (colchetes [])
+const lista1 = ["arroz", "feijão", "macarrão", "leite"];
+
+// Forma 2: Adicionando item por índice
+const lista2 = [];
+lista2[0] = "arroz";
+lista2[1] = "feijão";
+lista2[2] = "macarrão";
+lista2[3] = "leite";
+
+// Forma 3: Usando new Array()
+const lista3 = new Array("arroz", "feijão", "macarrão", "leite");
+
+// ----------------------------
+// 🔹 Acessando e alterando valores
+// ----------------------------
+const lista = ["arroz", "feijão", "macarrão", "leite"];
+lista[0] = "Café"; // Alterando o valor da posição 0
+console.log(lista); // Mostra a lista completa
+alert(lista[0]); // Mostra apenas o primeiro item → "Café"
+
+// ----------------------------
+// 🔹 Trabalhando com arrays
+// ----------------------------
+const pessoa = ["Bruno", "Conceição", 20];
+
+console.log(pessoa.length);         // Conta os itens do array → 3
+console.log(pessoa[pessoa.length-1]); // Mostra o último item → 20
+
+pessoa.push("Brasileiro"); // Adiciona novo item no final
+console.log(pessoa);       // ["Bruno", "Conceição", 20, "Brasileiro"]
+
+console.log(Array.isArray(pessoa)); // Verifica se é um array → true
+
+// ----------------------------
+// 🔹 Diferença entre Array e Objeto
+// ----------------------------
+
+// Array (acesso por índice)
+console.log(pessoa[0]); // Bruno
+
+// Objeto (acesso por chave)
+const pessoaObj = {nome:"Bruno", sobrenome:"Conceição", idade:20};
+console.log(pessoaObj.nome); // Bruno
