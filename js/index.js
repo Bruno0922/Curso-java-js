@@ -378,8 +378,7 @@ const pessoa = ["Bruno", "Conceição", 20];
 console.log(pessoa.length);         // Conta os itens do array → 3
 console.log(pessoa[pessoa.length-1]); // Mostra o último item → 20
 
-pessoa.push("Brasileiro"); // Adiciona novo item no final
-console.log(pessoa);       // ["Bruno", "Conceição", 20, "Brasileiro"]
+
 
 console.log(Array.isArray(pessoa)); // Verifica se é um array → true
 
@@ -393,3 +392,86 @@ console.log(pessoa[0]); // Bruno
 // Objeto (acesso por chave)
 const pessoaObj = {nome:"Bruno", sobrenome:"Conceição", idade:20};
 console.log(pessoaObj.nome); // Bruno
+
+
+
+// Exemplo de array
+const pessoa = ["Bruno", "Conceição", 20];
+
+// ----------------------------
+// 🔹 Adicionar e remover itens
+// ----------------------------
+pessoa.push("Brasileiro");  // Adiciona no final
+console.log(pessoa);
+
+pessoa.pop();               // Remove o último item
+console.log(pessoa);
+
+pessoa.shift();             // Remove o primeiro item
+console.log(pessoa);
+
+pessoa.unshift("Bonitão");  // Adiciona no início
+console.log(pessoa);
+
+delete pessoa[0];           // Remove o item pelo índice, mas deixa "undefined"
+console.log(pessoa);
+
+// ----------------------------
+// 🔹 splice()
+// ----------------------------
+// splice(posição, quantosRemover, itensParaAdicionar...)
+pessoa.splice(1, 0, "Item 1", "Item 2"); // Adiciona a partir do índice 1
+console.log(pessoa);
+
+// ----------------------------
+// 🔹 join()
+// ----------------------------
+document.getElementById("Teste02").innerHTML = pessoa.join(" * ");  
+// Une os itens em uma string → "undefined * Item 1 * Item 2 * Conceição * 20"
+
+// ----------------------------
+// 🔹 concat()
+// ----------------------------
+const Lista1 = ["Arroz", "Feijão", "Leite", "Macarrão"];
+const Lista2 = ["Suco", "Refrigerante", "Carne"];
+const superlista = Lista1.concat(Lista2);
+console.log(superlista);
+
+// ----------------------------
+// 🔹 slice()
+// ----------------------------
+const jogadores = ["Biro Biro", "Ribamar", "Pelé", "Maradona", "Neymar", "Cristiano Ronaldo", "Vampeta", "Diniz"];
+const melhores = jogadores.slice(2, 6); // Do índice 2 até antes do índice 6
+console.log(melhores); // ["Pelé", "Maradona", "Neymar", "Cristiano Ronaldo"]
+
+// ----------------------------
+// 🔹 sort()
+// ----------------------------
+const jogoordem = jogadores.sort(); // Ordem alfabética
+console.log(jogoordem);
+
+const numeros = [40, 100, 1, 5, 25, 10];
+numeros.sort(function(a, b){ return a - b }); // Ordem crescente
+console.log(numeros);
+
+// ----------------------------
+// 🔹 Math.max / Math.min
+// ----------------------------
+function maiornumero(array){
+    return Math.max.apply(null, array);
+}
+console.log("Maior número:", maiornumero(numeros));
+
+function menornumero(array){
+    return Math.min.apply(null, array);
+}
+console.log("Menor número:", menornumero(numeros));
+
+// ----------------------------
+// 🔹 filter()
+// ----------------------------
+const maior20 = numeros.filter(function(value){
+    return value > 20;
+});
+console.log(maior20); // Números maiores que 20
+
