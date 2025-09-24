@@ -589,3 +589,46 @@ var tamanho = carros.length; // Quantidade de itens no array
 for (let i = 0; i < tamanho; i++) {
     document.getElementById("teste06").innerHTML += carros[i] + " - ";
 }
+
+
+/** 
+ * CLASSES EM JAVASCRIPT
+ * 
+ * Em 2015 foi introduzido no JS as classes.
+ * As classes são um conceito antigo em programação
+ * e várias linguagens utilizam elas. Mas no JavaScript
+ * isso é relativamente novo, por isso mesmo programadores 
+ * experientes às vezes não sabem usar muito bem.
+ * 
+ * Basicamente, as classes são como "fábricas" para criar objetos.
+ * Pode-se dizer que são "funções especiais" para criação de objetos.
+ * 
+ * Assim como uma fábrica da vida real precisa de máquinas para 
+ * construir os objetos, as classes no JS usam um método `constructor()` 
+ * para fabricar os objetos.
+ */
+
+class Carro {
+    constructor(valor1, valor2, valor3) { // valores que vão ser passados no objeto
+        this.Marca = valor1;
+        this.Modelo = valor2;
+        this.Ano = valor3;
+    }
+
+    buzina() {
+        return this.Marca + " buzina: biiii";
+    }
+}
+
+// Objetos criados a partir da classe Carro
+const uno = new Carro("Fiat", "Uno", 2001);
+const gol = new Carro("Volkswagen", "Gol Quadrado", 2005);
+
+// Exibindo o resultado no console
+console.log(uno.buzina());
+console.log(gol.buzina());
+
+/* 
+ * Dica: Classes sempre precisam ser declaradas 
+ * antes da criação dos objetos.
+ */
